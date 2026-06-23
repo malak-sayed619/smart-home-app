@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_home_app/login.dart';
+import 'package:smart_home_app/profile.dart';
 import 'package:smart_home_app/signup.dart';
 
 void main() {
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
       ),
-      home: SignUp(),
+      home: SettingsScreen(),
     );
   }
 }
