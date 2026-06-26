@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home_app/login.dart';
-import 'package:smart_home_app/profile.dart';
-import 'package:smart_home_app/signup.dart';
+import 'package:smart_home_app/features/analytics.dart';
+import 'package:smart_home_app/features/bedroomscreen.dart';
+import 'package:smart_home_app/features/homescreen.dart';
+import 'package:smart_home_app/core/auth/login.dart';
+import 'package:smart_home_app/features/setting.dart';
+import 'package:smart_home_app/core/auth/signup.dart';
+import 'package:smart_home_app/core/auth/signin.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,7 +36,15 @@ class MyApp extends StatelessWidget {
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
       ),
-      home: SettingsScreen(),
+
+      home: Homescreen(),
+
+      /*initialRoute: AppRoutes.LoginScreen,
+      routes: {
+        AppRoutes.LoginScreen: (context) => const LoginScreen(),
+        AppRoutes.SettingsScreen: (context) => const SettingsScreen(),
+        AppRoutes.SignUp: (context) => const SignUp(),
+      },*/
     );
   }
 }
