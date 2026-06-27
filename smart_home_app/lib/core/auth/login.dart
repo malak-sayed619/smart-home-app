@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_home_app/core/auth/signin.dart';
+import 'package:smart_home_app/features/homescreen.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -23,7 +24,7 @@ class Login extends StatelessWidget {
                   style: TextStyle(color: Color.fromARGB(255, 1, 39, 2)),
                 ),
               ),
-              appButton("sign in"),
+              app(context, "signin"),
               Text("don't have an account?"),
               Container(
                 color: const Color(0xFFF1EFEA),
@@ -87,6 +88,37 @@ class Login extends StatelessWidget {
   Widget appButton(String text) {
     return GestureDetector(
       onTap: () {},
+      child: Container(
+        height: 50,
+        width: 300,
+        decoration: BoxDecoration(
+          color: const Color.fromARGB(255, 4, 74, 20),
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              text,
+              style: const TextStyle(color: Colors.white, fontSize: 16),
+            ),
+            const SizedBox(width: 10),
+
+            const Icon(Icons.arrow_forward, color: Colors.white),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget app(BuildContext context, String text) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => const Homescreen()),
+        );
+      },
       child: Container(
         height: 50,
         width: 300,
